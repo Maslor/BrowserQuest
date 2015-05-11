@@ -164,17 +164,17 @@ module.exports = Player = Character.extend({
                             self.firepotionTimeout = setTimeout(function() {
                                 self.broadcast(self.equip(self.armor)); // return to normal after 15 sec
                                 self.firepotionTimeout = null;
-                            }, 15000);
+                            }, 10000);
                             self.send(new Messages.HitPoints(self.maxHitPoints).serialize());
                         } else if(Types.isHealingItem(kind)) {
                             var amount;
                             
                             switch(kind) {
                                 case Types.Entities.FLASK: 
-                                    amount = 40;
+                                    amount = 25;
                                     break;
                                 case Types.Entities.BURGER: 
-                                    amount = 100;
+                                    amount = 75;
                                     break;
                             }
                             
